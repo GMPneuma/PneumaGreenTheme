@@ -1,0 +1,9 @@
+# Development and release artifacts
+dist/
+*.zip
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

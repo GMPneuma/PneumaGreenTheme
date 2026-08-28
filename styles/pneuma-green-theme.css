@@ -1,0 +1,287 @@
+/* Pneuma's Green Theme for Cyberpunk RED Core */
+
+:root {
+  --pgt-green-900: #263f0e;
+  --pgt-green-700: #4d771f;
+  --pgt-green-600: #5f9028;
+  --pgt-green-400: #92d050;
+  --pgt-green-200: #b5ffa1;
+  --pgt-surface-0: #ffffff;
+  --pgt-surface-1: #eeeeee;
+  --pgt-surface-2: #dddddd;
+  --pgt-surface-3: #cccccc;
+  --pgt-surface-chat: #c0c0c0;
+  --pgt-text: #222222;
+  --pgt-text-strong: #111111;
+  --pgt-text-inverse: #ffffff;
+  --pgt-border-muted: #888888;
+  --pgt-focus-ring: rgb(77 119 31 / 45%);
+
+  /* Cyberpunk RED Core palette hooks. */
+  --cpr-color-red: var(--pgt-green-700);
+  --cpr-color-white: var(--pgt-surface-1);
+  --cpr-color-light-grey: var(--pgt-surface-3);
+  --cpr-color-dark-grey: var(--pgt-border-muted);
+  --cpr-background-box: var(--pgt-surface-2);
+  --cpr-background-window: var(--pgt-surface-3);
+  --cpr-background-tab-active: var(--pgt-green-700);
+  --cpr-background-border: var(--pgt-green-700);
+  --cpr-background-chat-card-block: var(--pgt-green-700);
+  --cpr-background-chat-card: #1a1a1a;
+  --cpr-background-editor-button: var(--pgt-surface-2);
+  --cpr-background-editor-button-hover: var(--pgt-surface-1);
+  --cpr-background-editor-button-active: var(--pgt-surface-0);
+  --cpr-background-pill: var(--pgt-green-400);
+  --cpr-text-icon-highlight: var(--pgt-green-700);
+  --cpr-text-header: var(--pgt-green-400);
+  --cpr-text-tab-highlight: var(--pgt-green-200);
+  --cpr-text-chat-normal: var(--pgt-text);
+  --cpr-text-normal: var(--pgt-text);
+  --cpr-text-window: var(--pgt-text);
+  --cpr-text-pill: var(--pgt-text-strong);
+}
+
+/* Foundry applies this class when the core dark color scheme is active. */
+body.theme-dark {
+  --pgt-green-900: #b5ffa1;
+  --pgt-green-700: #92d050;
+  --pgt-green-600: #7fba40;
+  --pgt-green-400: #6b9f34;
+  --pgt-green-200: #d5ffc9;
+  --pgt-surface-0: #262a24;
+  --pgt-surface-1: #22261f;
+  --pgt-surface-2: #1b1f19;
+  --pgt-surface-3: #151813;
+  --pgt-surface-chat: #20251e;
+  --pgt-text: #e8ede5;
+  --pgt-text-strong: #ffffff;
+  --pgt-text-inverse: #10130e;
+  --pgt-border-muted: #788272;
+  --pgt-focus-ring: rgb(146 208 80 / 55%);
+  --cpr-background-chat-card: #11140f;
+}
+
+/* CPR navigation and interaction accents. */
+.sheet nav.sheet-tabs .item i {
+  color: var(--pgt-green-700) !important;
+}
+
+.sheet nav.sheet-tabs .item::after,
+.tab-pink-underlay {
+  background: var(--pgt-green-700) !important;
+}
+
+.sheet .tab-label.active {
+  box-shadow: 0 0 0.5rem var(--pgt-focus-ring);
+}
+
+.sheet button:hover,
+.dialog-sheet button:hover {
+  border-color: var(--pgt-green-700);
+  box-shadow: 0 0 0.25rem var(--pgt-focus-ring);
+}
+
+#pause .pause-glitch::before,
+#pause .pause-glitch::after {
+  text-shadow: -0.125rem 0 var(--pgt-green-700);
+}
+
+/* Sheet lists. Specificity intentionally matches the CPR system rules. */
+.sheet .items-list .item:nth-child(odd),
+.sheet .effects-list .item.effect:nth-child(odd) {
+  background-color: var(--pgt-surface-2) !important;
+}
+
+.sheet .items-list .item:nth-child(even),
+.sheet .effects-list .item.effect:nth-child(even) {
+  background-color: var(--pgt-surface-1) !important;
+}
+
+.sheet .items-list .item {
+  color: var(--pgt-text-strong) !important;
+  font-size: small;
+}
+
+.sheet .items-list .item input.skill-input {
+  background-color: var(--pgt-surface-0);
+  border: 1px solid var(--pgt-border-muted);
+  color: var(--pgt-text-strong);
+}
+
+.sheet .effects-list .effects-category.item-header,
+.sheet .tab.effects-tab .effects-category.item-header {
+  background-color: var(--pgt-green-700) !important;
+  color: var(--pgt-text-inverse) !important;
+  font-weight: 700;
+}
+
+.sheet .effects-list .effect-name .text-pill {
+  background-color: var(--pgt-surface-3);
+  border: 1px solid var(--pgt-green-700);
+  border-radius: 0.25rem;
+  color: var(--pgt-green-900);
+  display: inline-block;
+  padding: 0.1em 0.4em;
+}
+
+/* CPR dialogs and form controls. */
+.dialog-sheet {
+  background-color: var(--pgt-surface-0) !important;
+  border-radius: 0.5rem;
+  color: var(--pgt-text) !important;
+  padding: 1em;
+}
+
+.dialog-sheet input:is([type="number"], [type="text"]),
+.dialog-sheet select,
+.sheet select {
+  appearance: auto;
+  background-color: var(--pgt-surface-0) !important;
+  border: 1px solid var(--pgt-border-muted);
+  border-radius: 0.25rem;
+  color: var(--pgt-text-strong) !important;
+  padding: 0.2em 0.4em;
+}
+
+.dialog-sheet select option,
+.sheet select option {
+  background-color: var(--pgt-surface-0);
+  color: var(--pgt-text-strong);
+}
+
+.sheet select optgroup {
+  background-color: var(--pgt-surface-3);
+  color: var(--pgt-green-900);
+}
+
+.dialog-sheet .dialog-item.flexrow:nth-child(odd) {
+  background-color: var(--pgt-surface-3) !important;
+}
+
+.dialog-sheet .dialog-item.flexrow:nth-child(even) {
+  background-color: var(--pgt-surface-1) !important;
+}
+
+.dialog-sheet .dialog-footer .cpr-dialog-button {
+  background-color: var(--pgt-green-700);
+  border: 0;
+  border-radius: 0.25rem;
+  color: var(--pgt-text-inverse);
+  padding: 0.5em 1em;
+}
+
+.dialog-sheet .dialog-footer .cpr-dialog-button:hover {
+  background-color: var(--pgt-green-400);
+  color: var(--pgt-text-inverse);
+}
+
+/* Chat messages and CPR roll cards. */
+#chat-log .chat-message {
+  background-color: var(--pgt-surface-chat) !important;
+  border: 2px solid var(--pgt-green-700) !important;
+  border-radius: 0.5rem;
+  color: var(--pgt-text) !important;
+}
+
+#chat-log .chat-message .message-header {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--pgt-green-700);
+  color: var(--pgt-text) !important;
+}
+
+#chat-log .chat-message .message-sender {
+  color: var(--pgt-green-900) !important;
+  font-weight: 700;
+}
+
+#chat-log .chat-message img.chat-portrait-message-portrait-generic {
+  border: 2px solid var(--pgt-green-700) !important;
+  border-radius: 50%;
+}
+
+#chat-log .chat-message .rollcard {
+  background-color: var(--pgt-surface-chat) !important;
+  border-radius: 0.5rem;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+#chat-log .rollcard .chat-rollTitle-stat {
+  background-color: var(--pgt-green-700) !important;
+  border-bottom: 1px solid var(--pgt-green-900);
+  border-radius: 0.25rem 0.25rem 0 0;
+  color: var(--pgt-text-inverse) !important;
+  font-weight: 700;
+  padding: 0.5em;
+  text-align: center;
+}
+
+#chat-log .rollcard .d6-dice-div img {
+  filter: hue-rotate(90deg);
+  height: 3rem;
+  width: 3rem;
+}
+
+#chat-log .dice-total {
+  color: var(--pgt-green-900) !important;
+  font-size: 3.5em;
+  font-weight: 700;
+}
+
+#chat-log .chat-message .chat-mode-indicator {
+  background-color: var(--pgt-surface-3) !important;
+  color: var(--pgt-green-900) !important;
+}
+
+/* Preserve sidebar contrast without overriding every entry name globally. */
+#sidebar .directory-list .entry-name,
+#sidebar .directory-list .entry-name a,
+#sidebar .subdirectory .directory-item.compendium .entry-name {
+  color: var(--color-text-light-highlight, #ffffff) !important;
+}
+
+.compendium.directory .directory-list .entry-name,
+.compendium.directory .directory-list .entry-name a,
+.journal-sheet-container .journal-sidebar .directory-list .page-heading,
+.journal-sheet-container .journal-sidebar .directory-list .page-heading :is(.page-number, .page-title),
+.journal-sheet-container .journal-sidebar .directory-list .heading-link {
+  color: var(--pgt-text) !important;
+}
+
+/* Journal tables in both view and ProseMirror edit modes. */
+.journal-entry .journal-page-content table,
+.journal-entry .journal-page-content :is(tbody, tr, td, th),
+.editor-container .editor-content .ProseMirror table,
+.editor-container .editor-content .ProseMirror :is(tbody, tr, td, th) {
+  background-color: transparent !important;
+  border-collapse: collapse !important;
+  color: var(--pgt-text) !important;
+}
+
+.journal-entry .journal-page-content :is(td, th),
+.editor-container .editor-content .ProseMirror :is(td, th) {
+  border: 1px solid var(--pgt-green-700) !important;
+  padding: 0.25rem 0.375rem;
+}
+
+.journal-entry .journal-page-content :is(td, th)[style],
+.editor-container .editor-content .ProseMirror :is(td, th)[style] {
+  background: transparent !important;
+}
+
+.journal-entry .journal-page-content tr:nth-child(odd),
+.editor-container .editor-content .ProseMirror tr:nth-child(odd) {
+  background-color: var(--pgt-surface-2) !important;
+}
+
+.journal-entry .journal-page-content tr:nth-child(even),
+.editor-container .editor-content .ProseMirror tr:nth-child(even) {
+  background-color: var(--pgt-surface-1) !important;
+}
+
+.journal-entry .journal-page-content tr:first-child,
+.editor-container .editor-content .ProseMirror tr:first-child {
+  background-color: var(--pgt-green-700) !important;
+  color: var(--pgt-text-inverse) !important;
+  font-weight: 700;
+}
