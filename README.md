@@ -20,3 +20,12 @@ Then enable **Pneuma's Green Theme** in the world's module settings.
 ## Development
 
 The complete theme is in `styles/pneuma-green-theme.css`. Colors are defined as custom properties near the top of the file. Light and dark palettes are kept together so the visual design can be adjusted without hunting through individual component rules.
+
+### Theme terminology
+
+Foundry and Cyberpunk RED Core each have an independent appearance setting:
+
+- **Foundry UI Light/Dark** means **Core → Preferred Color Scheme**.
+- **CPR Sheet Light/Dark** means **Cyberpunk RED - CORE → Theme**.
+
+The stylesheet supports all four combinations of those settings.

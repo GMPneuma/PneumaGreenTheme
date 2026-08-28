@@ -11,6 +11,25 @@
   --pgt-surface-2: #dddddd;
   --pgt-surface-3: #cccccc;
   --pgt-surface-chat: #c0c0c0;
+  --pgt-skill-row-odd: #dddddd;
+  --pgt-skill-row-even: #eeeeee;
+  --pgt-skill-text: #111111;
+  --pgt-skill-input: #ffffff;
+  --pgt-skill-header: #92d050;
+  --pgt-skill-pill: #92d050;
+  --pgt-skill-pill-text: #111111;
+  --pgt-row-odd: #d9e7cc;
+  --pgt-row-even: #edf4e7;
+  --pgt-gear-row-odd: #dddddd;
+  --pgt-gear-row-even: #eeeeee;
+  --pgt-chat-border: #4d771f;
+  --pgt-chat-name: #365a18;
+  --pgt-roll-text: #111111;
+  --pgt-ui-accent: #4d771f;
+  --pgt-ui-highlight: #4d771f;
+  --pgt-section-header: #111111;
+  --pgt-tab-text: #ffffff;
+  --pgt-tab-inactive: #202020;
   --pgt-text: #222222;
   --pgt-text-strong: #111111;
   --pgt-text-inverse: #ffffff;
@@ -41,24 +60,117 @@
   --cpr-text-pill: var(--pgt-text-strong);
 }
 
-/* Foundry applies this class when the core dark color scheme is active. */
-body.theme-dark {
-  --pgt-green-900: #b5ffa1;
-  --pgt-green-700: #92d050;
-  --pgt-green-600: #7fba40;
-  --pgt-green-400: #6b9f34;
-  --pgt-green-200: #d5ffc9;
+/* Support both Foundry's core dark scheme and CPR's system theme toggle. */
+body.theme-dark,
+html[data-cpr-theme="darkmode"] {
+  --pgt-green-900: #a9cf86;
+  --pgt-green-700: #456b2a;
+  --pgt-green-600: #557c35;
+  --pgt-green-400: #78a84f;
+  --pgt-green-200: #9dcc7c;
   --pgt-surface-0: #262a24;
   --pgt-surface-1: #22261f;
   --pgt-surface-2: #1b1f19;
   --pgt-surface-3: #151813;
   --pgt-surface-chat: #20251e;
+  --pgt-skill-row-odd: #20271d;
+  --pgt-skill-row-even: #293126;
+  --pgt-skill-text: #eef4eb;
+  --pgt-skill-input: #171b15;
+  --pgt-skill-header: #78a84f;
+  --pgt-skill-pill: #4a5147;
+  --pgt-skill-pill-text: #eef4eb;
+  --pgt-row-odd: #20271d;
+  --pgt-row-even: #293126;
+  --pgt-gear-row-odd: #20271d;
+  --pgt-gear-row-even: #293126;
+  --pgt-chat-border: #3f6127;
+  --pgt-chat-name: #9dcc7c;
+  --pgt-roll-text: #f2f5ef;
+  --pgt-ui-accent: #4d771f;
+  --pgt-ui-highlight: #78a84f;
+  --pgt-section-header: #0f120e;
+  --pgt-tab-text: #eef4eb;
+  --pgt-tab-inactive: #30372e;
   --pgt-text: #e8ede5;
   --pgt-text-strong: #ffffff;
   --pgt-text-inverse: #10130e;
   --pgt-border-muted: #788272;
-  --pgt-focus-ring: rgb(146 208 80 / 55%);
+  --pgt-focus-ring: rgb(85 124 53 / 40%);
   --cpr-background-chat-card: #11140f;
+}
+
+/*
+ * CPR declares its theme on :root after module styles are loaded. Applying the
+ * system hooks on body wins through inheritance without escalating every
+ * component selector or changing Foundry's semantic warning/error colors.
+ */
+body {
+  --cpr-color-red: var(--pgt-green-700);
+  --cpr-color-pink: var(--pgt-row-odd);
+  --cpr-color-white: var(--pgt-surface-1);
+  --cpr-color-light-grey: var(--pgt-surface-3);
+  --cpr-color-dark-grey: var(--pgt-border-muted);
+  --cpr-background-border: var(--pgt-green-700);
+  --cpr-background-box: var(--pgt-surface-2);
+  --cpr-background-window: var(--pgt-surface-3);
+  --cpr-background-header: var(--pgt-section-header);
+  --cpr-background-pill: var(--pgt-green-400);
+  --cpr-background-row-odd: var(--pgt-row-odd);
+  --cpr-background-row-even: var(--pgt-row-even);
+  --cpr-background-tab-active: var(--pgt-green-700);
+  --cpr-background-tab-inactive: var(--pgt-tab-inactive);
+  --cpr-background-tab-underlay: var(--pgt-green-400);
+  --cpr-background-chat-card: var(--pgt-surface-chat);
+  --cpr-background-chat-card-block: var(--pgt-chat-border);
+  --cpr-background-chat-card-block-before: var(--pgt-surface-1);
+  --cpr-background-chat-border: var(--pgt-chat-border);
+  --cpr-background-content-link: var(--pgt-row-even);
+  --cpr-background-cyberdeck-section-header: var(--pgt-row-odd);
+  --cpr-background-dialog-border: var(--pgt-green-700);
+  --cpr-background-dialog-hr-gradient-start: var(--pgt-section-header);
+  --cpr-background-dialog-hr-gradient-middle: var(--pgt-green-700);
+  --cpr-background-dialog-hr-gradient-end: var(--pgt-section-header);
+  --cpr-background-dialog-selected: var(--pgt-row-odd);
+  --cpr-background-foundry-hover: var(--pgt-green-700);
+  --cpr-background-foundry-input: var(--pgt-surface-0);
+  --cpr-background-foundry-button: var(--pgt-surface-1);
+  --cpr-background-editor-button: var(--pgt-surface-2);
+  --cpr-background-editor-button-hover: var(--pgt-surface-1);
+  --cpr-background-editor-button-active: var(--pgt-surface-0);
+  --cpr-background-editor-button-selected: var(--pgt-row-odd);
+  --cpr-background-editor-header: var(--pgt-section-header);
+  --cpr-background-journal-blockquote: var(--pgt-row-odd);
+  --cpr-darkmode-main: var(--pgt-green-600);
+  --cpr-darkmode-red: var(--pgt-green-700);
+  --cpr-darkmode-background: var(--pgt-surface-2);
+  --cpr-darkmode-header: var(--pgt-section-header);
+  --cpr-darkmode-text-main: var(--pgt-text);
+  --cpr-darkmode-bluish-grey: var(--pgt-row-odd);
+  --cpr-pause-highlight1: var(--pgt-green-700);
+  --cpr-pause-highlight2: var(--pgt-green-400);
+  --cpr-pause-text: var(--pgt-tab-text);
+  --cpr-text-content-link-icon: var(--pgt-green-700);
+  --cpr-text-dir-list: var(--pgt-tab-text);
+  --cpr-text-editor-header: var(--pgt-tab-text);
+  --cpr-text-chat-normal: var(--pgt-text);
+  --cpr-text-foundry-hint: var(--pgt-text);
+  --cpr-text-foundry-hover: var(--pgt-green-700);
+  --cpr-text-foundry-input: var(--pgt-text-strong);
+  --cpr-text-header: var(--pgt-green-400);
+  --cpr-text-icon-highlight: var(--pgt-green-700);
+  --cpr-text-icon-normal: var(--pgt-text);
+  --cpr-text-journal-table-header: var(--pgt-tab-text);
+  --cpr-text-mook-header: var(--pgt-tab-text);
+  --cpr-text-mook-name: var(--pgt-tab-text);
+  --cpr-text-mook-normal: var(--pgt-text);
+  --cpr-text-pause: var(--pgt-tab-text);
+  --cpr-text-input: var(--pgt-text-strong);
+  --cpr-text-normal: var(--pgt-text);
+  --cpr-text-pill: var(--pgt-skill-pill-text);
+  --cpr-text-tab-highlight: var(--pgt-green-200);
+  --cpr-text-tab-normal: var(--pgt-tab-text);
+  --cpr-text-window: var(--pgt-text);
 }
 
 /* CPR navigation and interaction accents. */
@@ -86,32 +198,216 @@ body.theme-dark {
   text-shadow: -0.125rem 0 var(--pgt-green-700);
 }
 
-/* Sheet lists. Specificity intentionally matches the CPR system rules. */
-.sheet .items-list .item:nth-child(odd),
+/* Foundry UI: Configure Settings accents (not error or danger colors). */
+#settings-config,
+.category-filter {
+  --color-border-highlight: var(--pgt-ui-accent);
+  --color-border-highlight-alt: var(--pgt-green-400);
+  --color-shadow-highlight: var(--pgt-focus-ring);
+  --color-warm-1: var(--pgt-ui-highlight);
+  --color-warm-2: var(--pgt-green-700);
+  --color-warm-3: var(--pgt-section-header);
+  --color-scrollbar: var(--pgt-ui-accent);
+  --color-scrollbar-border: var(--pgt-green-600);
+  --color-text-selection-bg: var(--pgt-ui-accent);
+  --input-focus-outline-color: var(--pgt-green-600);
+  --button-focus-outline-color: var(--pgt-green-600);
+  --button-background-color: var(--pgt-green-700);
+  --button-hover-background-color: var(--pgt-green-600);
+  --button-hover-border-color: var(--pgt-green-900);
+  scrollbar-color: var(--pgt-ui-accent) transparent;
+}
+
+#settings-config h2,
+.category-filter h2 {
+  border-bottom-color: var(--pgt-ui-accent) !important;
+}
+
+:is(#settings-config, .category-filter) :is(input, select) {
+  --input-focus-outline-color: var(--pgt-ui-highlight);
+}
+
+:is(#settings-config, .category-filter) :is(a.button, button) {
+  --button-background-color: var(--pgt-surface-2);
+  --button-border-color: var(--pgt-ui-accent);
+  --button-text-color: var(--pgt-text);
+  --button-focus-outline-color: var(--pgt-ui-highlight);
+  --button-hover-background-color: var(--pgt-ui-accent);
+  --button-hover-border-color: var(--pgt-green-400);
+  --button-hover-text-color: var(--pgt-tab-text);
+}
+
+:is(#settings-config, .category-filter) ::selection {
+  background-color: var(--pgt-ui-accent);
+  color: var(--pgt-tab-text);
+}
+
+#settings-config .tabs .item.active,
+#settings-config .settings-sidebar .item.active,
+#settings-config :is(.category.active, .filter-match, .search-match),
+.category-filter nav.categories .category.active {
+  border-color: var(--pgt-ui-accent) !important;
+  color: var(--pgt-ui-highlight) !important;
+  text-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+}
+
+#settings-config .tabs .item.active :is(span, i),
+#settings-config .settings-sidebar .item.active :is(span, i),
+#settings-config :is(.category.active, .filter-match, .search-match) :is(span, i),
+.category-filter nav.categories .category.active :is(span, i) {
+  color: inherit !important;
+}
+
+#settings-config ::-webkit-scrollbar-thumb,
+.category-filter ::-webkit-scrollbar-thumb {
+  background: var(--pgt-ui-accent);
+  border-color: transparent;
+}
+
+/* Foundry v12 SettingsConfig uses this exact application id. */
+#client-settings {
+  --color-warm-1: var(--pgt-ui-highlight);
+  --color-warm-2: var(--pgt-ui-accent);
+  --color-warm-3: var(--pgt-section-header);
+  --color-scrollbar: var(--pgt-ui-accent);
+  --color-scrollbar-border: var(--pgt-green-600);
+  scrollbar-color: var(--pgt-ui-accent) transparent;
+}
+
+/* CPR's heading dividers can otherwise retain the system's red accent. */
+#client-settings :is(h1, h2, h3) {
+  border-bottom-color: var(--pgt-ui-accent) !important;
+}
+
+#client-settings hr {
+  border-color: var(--pgt-ui-accent) !important;
+  color: var(--pgt-ui-accent) !important;
+  background: var(--pgt-ui-accent) !important;
+  background-image: none !important;
+}
+
+#client-settings input[name="filter"]:focus {
+  border-color: var(--pgt-ui-highlight) !important;
+  box-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+  outline: 2px solid var(--pgt-ui-highlight) !important;
+}
+
+#client-settings nav.categories .category.active {
+  color: var(--pgt-ui-highlight) !important;
+  text-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+}
+
+#client-settings :is(a.button, button):is(:hover, :focus, .active) {
+  border-color: var(--pgt-ui-highlight) !important;
+  box-shadow: 0 0 0.35rem var(--pgt-focus-ring) !important;
+  outline-color: var(--pgt-ui-highlight) !important;
+}
+
+#client-settings ::-webkit-scrollbar-thumb {
+  background: var(--pgt-ui-accent) !important;
+  border-color: var(--pgt-green-600) !important;
+}
+
+/* Foundry v12 Audio/Video Configuration tabs. */
+#av-config {
+  --color-warm-1: var(--pgt-ui-highlight);
+  --color-warm-2: var(--pgt-ui-accent);
+}
+
+#av-config nav.tabs .item.active {
+  color: var(--pgt-ui-highlight) !important;
+  text-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+}
+
+#av-config nav.tabs .item.active :is(i, span) {
+  color: inherit !important;
+}
+
+/* Foundry canvas chrome: active tools, sidebar tabs, scenes, and hotbar page. */
+#controls :is(.scene-control, .control-tool).active,
+#sidebar-tabs > .item.active,
+#navigation .scene.view,
+#hotbar .page-number {
+  border-color: var(--pgt-ui-accent) !important;
+  color: var(--pgt-green-200) !important;
+  text-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+}
+
+#navigation .scene.view {
+  box-shadow: 0 0 0.5rem var(--pgt-focus-ring) !important;
+}
+
+#hotbar .macro.active,
+#hotbar .macro:hover {
+  border-color: var(--pgt-ui-accent) !important;
+  box-shadow: 0 0 0.35rem var(--pgt-focus-ring) !important;
+}
+
+/*
+ * Skill records use their own mode-aware palette. Scope them to the skills tab
+ * so shared .items-list markup in Gear, Cyber, Effects, and dialogs keeps its
+ * own component styling.
+ */
+.sheet .skills-tab li.items-header {
+  color: var(--pgt-skill-header) !important;
+}
+
+.sheet .skills-tab li.items-header :is(a, i, span) {
+  color: inherit !important;
+}
+
+.sheet .skills-tab .skills-container .text-pill {
+  background-color: var(--pgt-skill-pill) !important;
+  color: var(--pgt-skill-pill-text) !important;
+}
+
+.sheet .skills-tab ol.items-list > li.item:nth-child(odd) {
+  background-color: var(--pgt-skill-row-odd) !important;
+}
+
+.sheet .skills-tab ol.items-list > li.item:nth-child(even) {
+  background-color: var(--pgt-skill-row-even) !important;
+}
+
+.sheet .skills-tab ol.items-list > li.item,
+.sheet .skills-tab ol.items-list > li.item a {
+  color: var(--pgt-skill-text) !important;
+}
+
+.sheet .skills-tab ol.items-list > li.item {
+  font-size: small;
+}
+
+.sheet .skills-tab ol.items-list > li.item input.skill-input {
+  background-color: var(--pgt-skill-input) !important;
+  border: 1px solid var(--pgt-border-muted);
+  color: var(--pgt-skill-text) !important;
+}
+
+/* Gear records: remove CPR's pink alternating rows in light mode. */
+.sheet .gear-tab ol.items-list > li.item:nth-child(odd) {
+  background-color: var(--pgt-gear-row-odd) !important;
+  color: var(--pgt-text) !important;
+}
+
+.sheet .gear-tab ol.items-list > li.item:nth-child(even) {
+  background-color: var(--pgt-gear-row-even) !important;
+  color: var(--pgt-text) !important;
+}
+
+/* Effect records continue to follow the active Foundry color scheme. */
 .sheet .effects-list .item.effect:nth-child(odd) {
   background-color: var(--pgt-surface-2) !important;
 }
 
-.sheet .items-list .item:nth-child(even),
 .sheet .effects-list .item.effect:nth-child(even) {
   background-color: var(--pgt-surface-1) !important;
 }
 
-.sheet .items-list .item {
-  color: var(--pgt-text-strong) !important;
-  font-size: small;
-}
-
-.sheet .items-list .item input.skill-input {
-  background-color: var(--pgt-surface-0);
-  border: 1px solid var(--pgt-border-muted);
-  color: var(--pgt-text-strong);
-}
-
 .sheet .effects-list .effects-category.item-header,
 .sheet .tab.effects-tab .effects-category.item-header {
-  background-color: var(--pgt-green-700) !important;
-  color: var(--pgt-text-inverse) !important;
+  background-color: var(--pgt-section-header) !important;
+  color: var(--pgt-skill-header) !important;
   font-weight: 700;
 }
 
@@ -178,24 +474,24 @@ body.theme-dark {
 /* Chat messages and CPR roll cards. */
 #chat-log .chat-message {
   background-color: var(--pgt-surface-chat) !important;
-  border: 2px solid var(--pgt-green-700) !important;
+  border: 2px solid var(--pgt-chat-border) !important;
   border-radius: 0.5rem;
   color: var(--pgt-text) !important;
 }
 
 #chat-log .chat-message .message-header {
   background-color: transparent !important;
-  border-bottom: 1px solid var(--pgt-green-700);
+  border-bottom: 1px solid var(--pgt-chat-border);
   color: var(--pgt-text) !important;
 }
 
 #chat-log .chat-message .message-sender {
-  color: var(--pgt-green-900) !important;
+  color: var(--pgt-chat-name) !important;
   font-weight: 700;
 }
 
 #chat-log .chat-message img.chat-portrait-message-portrait-generic {
-  border: 2px solid var(--pgt-green-700) !important;
+  border: 2px solid var(--pgt-chat-border) !important;
   border-radius: 50%;
 }
 
@@ -207,13 +503,17 @@ body.theme-dark {
 }
 
 #chat-log .rollcard .chat-rollTitle-stat {
-  background-color: var(--pgt-green-700) !important;
-  border-bottom: 1px solid var(--pgt-green-900);
+  background-color: var(--pgt-chat-border) !important;
+  border-bottom: 1px solid var(--pgt-chat-border);
   border-radius: 0.25rem 0.25rem 0 0;
-  color: var(--pgt-text-inverse) !important;
+  color: var(--pgt-roll-text) !important;
   font-weight: 700;
   padding: 0.5em;
   text-align: center;
+}
+
+#chat-log .rollcard .chat-rollTitle-stat :is(a, i, span, div) {
+  color: inherit !important;
 }
 
 #chat-log .rollcard .d6-dice-div img {

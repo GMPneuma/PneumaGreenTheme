@@ -2,7 +2,7 @@
   "id": "pneuma-green-theme",
   "title": "Pneuma's Green Theme",
   "description": "A green visual theme for the Cyberpunk RED Core system in Foundry Virtual Tabletop.",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12",
@@ -28,5 +28,5 @@
   },
   "url": "https://github.com/GMPneuma/PneumaGreenTheme",
   "manifest": "https://github.com/GMPneuma/PneumaGreenTheme/releases/latest/download/module.json",
-  "download": "https://github.com/GMPneuma/PneumaGreenTheme/releases/download/v0.1.0/pneuma-green-theme-v0.1.0.zip"
+  "download": "https://github.com/GMPneuma/PneumaGreenTheme/releases/download/v0.8.0/pneuma-green-theme-v0.8.0.zip"
 }
