@@ -1,13 +1,13 @@
 # Pneuma's Green Theme
 
-A CSS-only green visual theme for the Cyberpunk RED Core system in Foundry Virtual Tabletop.
+A player-selectable green visual theme for the Cyberpunk RED Core system in Foundry Virtual Tabletop.
 
 ## Compatibility
 
 - Foundry Virtual Tabletop 12
 - Cyberpunk RED Core
 
-The module contains no JavaScript and makes no changes to actors, items, scenes, or world data.
+The module makes no changes to actors, items, scenes, or world data. Its small client-side controller only loads or unloads the theme stylesheet for the current player.
 
 ## Installation
 
@@ -17,9 +17,11 @@ Install the latest manifest URL in Foundry's module browser:
 
 Then enable **Pneuma's Green Theme** in the world's module settings.
 
+Each player can then open **Configure Settings → Module Settings → Pneuma's Green Theme** and independently enable or disable **Use Green Theme**. The preference is stored locally for that player and defaults to enabled.
+
 ## Development
 
-The complete theme is in `styles/pneuma-green-theme.css`. Colors are defined as custom properties near the top of the file. Light and dark palettes are kept together so the visual design can be adjusted without hunting through individual component rules.
+The complete theme is in `styles/pneuma-green-theme.css`. Colors are defined as custom properties near the top of the file. Light and dark palettes are kept together so the visual design can be adjusted without hunting through individual component rules. `scripts/pneuma-green-theme.js` registers the player setting and conditionally loads the stylesheet.
 
 ### Theme terminology
 
