@@ -62,7 +62,8 @@
 
 /* Support both Foundry's core dark scheme and CPR's system theme toggle. */
 body.theme-dark,
-html[data-cpr-theme="darkmode"] {
+html[data-cpr-theme="darkmode"],
+html.pneuma-green-theme-force-dark body {
   --pgt-green-900: #a9cf86;
   --pgt-green-700: #456b2a;
   --pgt-green-600: #557c35;
@@ -98,6 +99,44 @@ html[data-cpr-theme="darkmode"] {
   --pgt-border-muted: #788272;
   --pgt-focus-ring: rgb(85 124 53 / 40%);
   --cpr-background-chat-card: #11140f;
+}
+
+/* A player's forced-light choice wins over both Foundry and CPR dark modes. */
+html.pneuma-green-theme-force-light body {
+  --pgt-green-900: #263f0e;
+  --pgt-green-700: #4d771f;
+  --pgt-green-600: #5f9028;
+  --pgt-green-400: #92d050;
+  --pgt-green-200: #b5ffa1;
+  --pgt-surface-0: #ffffff;
+  --pgt-surface-1: #eeeeee;
+  --pgt-surface-2: #dddddd;
+  --pgt-surface-3: #cccccc;
+  --pgt-surface-chat: #c0c0c0;
+  --pgt-skill-row-odd: #dddddd;
+  --pgt-skill-row-even: #eeeeee;
+  --pgt-skill-text: #111111;
+  --pgt-skill-input: #ffffff;
+  --pgt-skill-header: #92d050;
+  --pgt-skill-pill: #92d050;
+  --pgt-skill-pill-text: #111111;
+  --pgt-row-odd: #d9e7cc;
+  --pgt-row-even: #edf4e7;
+  --pgt-gear-row-odd: #dddddd;
+  --pgt-gear-row-even: #eeeeee;
+  --pgt-chat-border: #4d771f;
+  --pgt-chat-name: #365a18;
+  --pgt-roll-text: #111111;
+  --pgt-ui-accent: #4d771f;
+  --pgt-ui-highlight: #4d771f;
+  --pgt-section-header: #111111;
+  --pgt-tab-text: #ffffff;
+  --pgt-tab-inactive: #202020;
+  --pgt-text: #222222;
+  --pgt-text-strong: #111111;
+  --pgt-text-inverse: #ffffff;
+  --pgt-border-muted: #888888;
+  --pgt-focus-ring: rgb(77 119 31 / 45%);
 }
 
 /*

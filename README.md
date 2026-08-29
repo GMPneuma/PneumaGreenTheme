@@ -19,7 +19,12 @@ Install the latest manifest URL in Foundry's module browser:
 
 Then enable **Pneuma's Green Theme** in the world's module settings.
 
-Each player can then open **Configure Settings → Module Settings → Pneuma's Green Theme** and independently enable or disable **Use Green Theme**. The preference is stored locally for that player and defaults to enabled.
+Each player can then open **Configure Settings → Module Settings → Pneuma's Green Theme** and independently:
+
+- Enable or disable **Use Green Theme**.
+- Set **Theme Mode** to **Follow Foundry / CPR**, **Force Light**, or **Force Dark**.
+
+These preferences are stored locally for that player. The theme defaults to enabled and follows the existing Foundry and CPR appearance settings until the player forces a mode.
 
 ## Development
 
