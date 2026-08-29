@@ -9,6 +9,8 @@ A player-selectable green visual theme for the Cyberpunk RED Core system in Foun
 
 The module makes no changes to actors, items, scenes, or world data. Its small client-side controller only loads or unloads the theme stylesheet for the current player.
 
+The theme does not recolor chat dice artwork, allowing dice-replacement modules to display their original asset colors.
+
 ## Installation
 
 Install the latest manifest URL in Foundry's module browser:

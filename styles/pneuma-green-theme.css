@@ -517,7 +517,6 @@ body {
 }
 
 #chat-log .rollcard .d6-dice-div img {
-  filter: hue-rotate(90deg);
   height: 3rem;
   width: 3rem;
 }
